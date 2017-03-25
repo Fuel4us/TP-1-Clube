@@ -7,7 +7,7 @@ package clube;
 public class Senior extends Socio {
 
     private String identificador;
-    private int contSenior = 1;
+    private static int contSenior = 1;
     private boolean dirigente;
 
     private static final int valorRefSenior = 150;
@@ -52,7 +52,7 @@ public class Senior extends Socio {
 
     @Override
     public String toString() {
-        return "";
+        return "ID: " + identificador + " Sócio " + getNome() + " tem " + calcIdade() + " anos de idade e paga " + mensalidade() + " de mensalidade.";
     }
 
     public float desconto() {
@@ -61,22 +61,22 @@ public class Senior extends Socio {
         float temp;
 
         if (isDirigente()) {
-            desconto = 100;
+            desconto = 1;
         } else {
 
             temp = super.calcIdade() / 10;
             desconto = temp % 10;
-            desconto = desconto * 10;
+            desconto = desconto / 10;
         }
 
         return desconto;
     }
-    
+
     public float mensalidade() {
         float mensalidade;
-        
-        mensalidade = getMensalidade() - (getMensalidade() * desconto());
-        
+
+        mensalidade = valorRefSenior - (valorRefSenior * desconto());
+
         return mensalidade;
     }
 

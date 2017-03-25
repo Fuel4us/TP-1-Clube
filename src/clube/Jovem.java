@@ -9,8 +9,8 @@ public abstract class Jovem extends Socio {
     private int nrAulas;
 
     private static final int NRAULAS_POR_OMISSAO = 1;
-    private final int valorAula = 25;
-    private static final int valorRefJovem = 100;
+    public final int valorAula = 25;
+    public static final int valorRefJovem = 100;
 
     public Jovem(String nome, long nif, int dataNasc, int nrAulas) {
         super(nome, nif, dataNasc);
@@ -36,7 +36,7 @@ public abstract class Jovem extends Socio {
 
     public String toString() {
 
-        return "";
+        return "Sócio de nome: " +getNome()+ " tem " +calcIdade()+ " anos de idade e paga " +mensalidade()+ " de mensalidade.";
     }
 
     public float mensalidade() {

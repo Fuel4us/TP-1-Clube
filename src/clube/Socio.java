@@ -61,7 +61,7 @@ public abstract class Socio {
 
     public String toString() {
 
-        return "";
+        return "Sócio de nome: " +getNome()+ " tem " +calcIdade()+ " anos de idade e paga " +getMensalidade()+ " de mensalidade.";
     }
 
     public int calcIdade() {

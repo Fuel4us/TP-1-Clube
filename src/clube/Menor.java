@@ -8,7 +8,7 @@ public class Menor extends Jovem {
 
     private String identificador;
     private String nomeEncarregado;
-    private int contM = 1;
+    private static int contM = 1;
 
     private static final String ID = "SMenor-";
     private final String NOMEENCARREGADO_POR_OMISSAO = "Nome não definido";
@@ -34,10 +34,13 @@ public class Menor extends Jovem {
         contM++;
     }
 
+    @Override
     public float mensalidade() {
         float mensalidade;
+        float temp;
 
-        mensalidade = mensalidade() - ((float) (mensalidade() * descontoMenor));
+        temp = (valorAula * getNrAulas());
+        mensalidade = temp - ((float) (temp * descontoMenor));
 
         return mensalidade;
 
@@ -53,6 +56,6 @@ public class Menor extends Jovem {
 
     @Override
     public String toString() {
-        return "";
+        return "ID: " +identificador+ " Sócio " +getNome()+ " tem " +calcIdade()+ " anos de idade e paga " +mensalidade()+ " de mensalidade.";
     }
 }
