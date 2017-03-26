@@ -8,30 +8,30 @@ import java.util.Objects;
  */
 public abstract class Socio {
 
-    private String nome;
-    private long nif;
-    private int dataNasc;
-    private float mensalidade;
+    private String nome; // Nome sócio  
+    private long nif; // NIF do sócio
+    private int dataNasc; // Data de Nascimento do sócio
+    private float mensalidade; // Mensalidade de cada sócio
 
     private final String NOME_POR_OMISSAO = "Nome não definido";
     private final long NIF_POR_OMISSAO = 000000000;
     private final int DATANASC_POR_OMISSAO = 0000;
 
-    public Socio(String nome, long nif, int dataNasc) {
+    public Socio(String nome, long nif, int dataNasc) { // Socio e os seus atributos 
 
         this.nome = nome;
         this.nif = nif;
         this.dataNasc = dataNasc;
     }
 
-    public Socio() {
+    public Socio() { // Socios e os seus atributos por omissão
 
         this.nome = NOME_POR_OMISSAO;
         this.nif = NIF_POR_OMISSAO;
         this.dataNasc = DATANASC_POR_OMISSAO;
     }
 
-    public Socio(Socio outroSocio) {
+    public Socio(Socio outroSocio) { // outroSocio e os seus atributos
         this(outroSocio.nome, outroSocio.nif, outroSocio.dataNasc);
     }
 
@@ -59,12 +59,12 @@ public abstract class Socio {
         this.dataNasc = dataNasc;
     }
 
-    public String toString() {
+    public String toString() { 
 
         return "Sócio de nome: " +getNome()+ " tem " +calcIdade()+ " anos de idade e paga " +getMensalidade()+ " de mensalidade.";
     }
 
-    public int calcIdade() {
+    public int calcIdade() { // Cálculo de idade para facilitar métodos mais tarde
         int idade;
 
         idade = 2017 - getDataNasc();
@@ -73,7 +73,7 @@ public abstract class Socio {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { // Verificação se existe sócio igual, gerado pelo netBeans
         if (this == obj) {
             return true;
         }

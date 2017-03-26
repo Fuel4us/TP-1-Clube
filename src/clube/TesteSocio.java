@@ -46,12 +46,12 @@ public class TesteSocio {
         listaSocios[11] = ss4;
 
 //        // Print dos sócios todos criados
-//        for (int i = 0; i < listaSocios.length; i++) {
-//            if (listaSocios[i] != null) {
-//                System.out.println("\n" + listaSocios[i]);
-//            }
-//
-//        }
+        for (int i = 0; i < listaSocios.length; i++) {
+            if (listaSocios[i] != null) {
+                System.out.println("\n" + listaSocios[i]);
+            }
+
+        }
 
         //Estética
         System.out.println("--------------------x--------------------");

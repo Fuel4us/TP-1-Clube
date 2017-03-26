@@ -6,28 +6,28 @@ package clube;
  */
 public class Adulto extends Jovem {
 
-    private String identificador;
-    private static int contA = 1;
-    private boolean dirigente;
+    private String identificador; // Identificador pedido no enunciado
+    private static int contA = 1; // Contador para o ID
+    private boolean dirigente; // Boolean para o caso de ter que aplicar os descontos de ser dirigente
 
     private static final boolean DIRIGENTE_POR_OMISSAO = false;
     private static final String ID = "SAdulto-";
 
-    public Adulto(String nome, long nif, int dataNasc, int nrAulas, boolean dirigente) {
+    public Adulto(String nome, long nif, int dataNasc, int nrAulas, boolean dirigente) { // Socio Adulto e seus atributos
         super(nome, nif, dataNasc, nrAulas);
         this.dirigente = dirigente;
         this.identificador = ID + contA;
         contA++;
     }
 
-    public Adulto() {
+    public Adulto() { // Socio Adulto e os seus atributos por omissao
         super();
         this.dirigente = DIRIGENTE_POR_OMISSAO;
         contA++;
         this.identificador = ID + contA;
     }
 
-    public Adulto(Adulto outroAdulto) {
+    public Adulto(Adulto outroAdulto) { // Socio outroAdulto e os atributos de outroAdulto
         this(outroAdulto.getNome(), outroAdulto.getNif(), outroAdulto.getDataNasc(), outroAdulto.getNrAulas(), outroAdulto.isDirigente());
         contA++;
         this.identificador = ID + contA;
@@ -46,7 +46,7 @@ public class Adulto extends Jovem {
     }
 
 
-    public float mensalidade() {
+    public float mensalidade() { // Cálculo da mensalidade para Jovens Adultos
         float mensalidade;
 
         if (isDirigente()) {
