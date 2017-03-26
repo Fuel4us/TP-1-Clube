@@ -38,17 +38,8 @@ public abstract class Jovem extends Socio {
 
         return "Sócio de nome: " +getNome()+ " tem " +calcIdade()+ " anos de idade e paga " +mensalidade()+ " de mensalidade.";
     }
-
-    public float mensalidade() {
-        float mensalidade;
-
-        if (this.getNrAulas() >= 4) {
-            mensalidade = valorRefJovem;
-        }else {
-            mensalidade = (this.getNrAulas() * valorAula);
-        }
-        
-        return mensalidade;
-    }
-
+    
+    @Override
+    public abstract float mensalidade();
+    
 }

@@ -103,5 +103,7 @@ public abstract class Socio {
     public void setMensalidade(float mensalidade) {
         this.mensalidade = mensalidade;
     }
+    
+    public abstract float mensalidade();
 
 }
